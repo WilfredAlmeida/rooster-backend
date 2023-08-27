@@ -3,7 +3,7 @@ import { logger } from "../logger";
 
 const router = Router();
 
-router.post("/", async(req: Request, res: Response)=>{
+router.post("/hook", async(req: Request, res: Response)=>{
 
     const requestBody = req.body;
 

@@ -7,6 +7,7 @@ import cors from "cors";
 // import { API_URLS, API_BASE_URL } from "./utils/constants";
 import { logger } from "./logger/index";
 import { API_BASE_URL, API_URLS } from "./utils/constants";
+import webhook from "./routes/webhook";
 
 dotenv.config();
 
@@ -40,6 +41,8 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+
+app.use(`${API_BASE_URL}/${API_URLS.WEBHOOK}`, webhook);
 
 app.get(`/`, (req: Request, res: Response) => {
   res.send(`<!DOCTYPE html>

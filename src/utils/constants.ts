@@ -5,7 +5,7 @@ export const API_BASE_URL = `/api/${API_VERSION}`;
 export const API_URLS = {
   AUTH: "auth",
   USER: "user",
-  NFT: "nft",
+  WEBHOOK: "webhook",
   MISC: "misc",
 };
 
