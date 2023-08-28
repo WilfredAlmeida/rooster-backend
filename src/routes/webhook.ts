@@ -36,7 +36,7 @@ router.post("/hook", async(req: Request, res: Response)=>{
     // console.log(JSON.parse(messageData));
 
     const messageDataParsed = JSON.parse(messageData);
-    logger.info(messageDataParsed)
+    logger.info(JSON.stringify(messageDataParsed))
 
     res.status(200).json({ message: 'Hook request received successfully.' });
 
