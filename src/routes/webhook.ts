@@ -47,8 +47,7 @@ logger.info("RECEIVED")
         topic: messageDataParsed.label
       };
 
-    const a = await sendNotification(message)
-    logger.info(a)
+    await sendNotification(message)
 
     res.status(200).json({ message: 'Hook request received successfully.' });
 
