@@ -3,6 +3,7 @@
 import dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import cors from "cors";
+import { applicationDefault, initializeApp } from "firebase-admin/app";
 
 // import { API_URLS, API_BASE_URL } from "./utils/constants";
 import { logger } from "./logger/index";
@@ -58,4 +59,9 @@ app.get(`/`, (req: Request, res: Response) => {
 
 app.listen(port, () => {
   logger.info(`Server running on port ${port}`);
+
+  initializeApp({
+    credential: applicationDefault(),
+  });
+
 });

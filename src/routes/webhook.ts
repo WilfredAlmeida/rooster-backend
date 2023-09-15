@@ -1,5 +1,6 @@
 import {Request, Response, Router} from "express";
 import { logger } from "../logger";
+import { sendNotification } from "../notifications/firebase";
 
 const router = Router();
 
@@ -37,6 +38,13 @@ router.post("/hook", async(req: Request, res: Response)=>{
 
     const messageDataParsed = JSON.parse(messageData);
     logger.info(JSON.stringify(messageDataParsed))
+
+    const messageToSend = {
+        topic: "test",
+        data: messageDataParsed
+    }
+
+    sendNotification(messageToSend)
 
     res.status(200).json({ message: 'Hook request received successfully.' });
 
