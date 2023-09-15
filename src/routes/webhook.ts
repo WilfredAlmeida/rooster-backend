@@ -5,7 +5,7 @@ import { sendNotification } from "../notifications/firebase";
 const router = Router();
 
 router.post("/hook", async(req: Request, res: Response)=>{
-
+logger.info("RECEIVED")
     const requestBody = req.body;
 
     console.log('Received a hook request:');
@@ -39,12 +39,16 @@ router.post("/hook", async(req: Request, res: Response)=>{
     const messageDataParsed = JSON.parse(messageData);
     logger.info(JSON.stringify(messageDataParsed))
 
-    const messageToSend = {
-        topic: "test",
-        data: messageDataParsed
-    }
+    const message = {
+        notification: {
+          body: JSON.stringify(messageDataParsed.data),
+          title: messageDataParsed.data.title,
+        },
+        topic: messageDataParsed.label
+      };
 
-    sendNotification(messageToSend)
+    const a = await sendNotification(message)
+    logger.info(a)
 
     res.status(200).json({ message: 'Hook request received successfully.' });
 

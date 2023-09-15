@@ -6,7 +6,7 @@ dist/
 .env
 firebase-service-account.json
 .local*
-
+rooster-399007-d852707f69a5.json
 # Editor and IDE files
 .vscode/
 .idea/
