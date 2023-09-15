@@ -1,6 +1,7 @@
 import {Request, Response, Router} from "express";
 import { logger } from "../logger";
 import { sendNotification } from "../notifications/firebase";
+import supabase from "../db/supabase";
 
 const router = Router();
 
@@ -46,6 +47,13 @@ logger.info("RECEIVED")
         },
         topic: messageDataParsed.label
       };
+    
+    const dbRes = await supabase.from("notifications").insert({
+        project_id:"lk7e0p",
+        topic:  messageDataParsed.label,
+        notif: JSON.stringify(messageDataParsed.data)
+    })
+    logger.info(JSON.stringify(dbRes))
 
     await sendNotification(message)
 
