@@ -44,7 +44,7 @@ router.post("/hook", async(req: Request, res: Response)=>{
         data: messageDataParsed
     }
 
-    sendNotification(messageToSend)
+    await sendNotification(messageToSend)
 
     res.status(200).json({ message: 'Hook request received successfully.' });
 
