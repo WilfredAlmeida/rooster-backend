@@ -2,7 +2,7 @@
 
 import { NextFunction, Request, Response } from "express";
 import * as jose from "jose";
-import { logger } from "../logger/index.ts";
+import { logger } from "../logger/index";
 
 const verifyAccessToken = async (
   req: Request,

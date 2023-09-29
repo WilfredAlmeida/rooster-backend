@@ -1,27 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es6",                         
-    "module": "commonjs",                    
-    "strict": true,                          
-    "esModuleInterop": true,                  
+    "target": "es6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "build",
     // "baseUrl": ".",
-    "forceConsistentCasingInFileNames": true, 
+    "forceConsistentCasingInFileNames": true,
     "strictPropertyInitialization": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true
     // "paths": {
-    //   "*": [
-    //     "node_modules/*"
-    //   ]
+    //   "*": ["node_modules/*"]
     // }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"],
-  "files":["./src/types/express/index.d.ts"],
+  "files": ["./src/types/express/index.d.ts"],
 }
