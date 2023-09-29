@@ -60,8 +60,8 @@ app.get(`/`, (req: Request, res: Response) => {
 app.listen(port, () => {
   logger.info(`Server running on port ${port}`);
 
-  initializeApp({
-    credential: applicationDefault(),
-  });
+  // initializeApp({
+  //   credential: applicationDefault(),
+  // });
 
 });
