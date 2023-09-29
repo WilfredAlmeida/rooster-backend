@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf ./build",
     "build": "npm run clean && tsc && tsc ./src/types/express/index.d.ts",
-    "start": "node src",
+    "start": "node build/index.js",
     "local": "ts-node --esm src/index.ts",
     "dev": "nodemon src -e ts,json --exec 'npm run local'"
   },
